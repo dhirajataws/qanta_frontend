@@ -41,8 +41,6 @@ class Cars extends React.Component {
   }
 }
 
-export default Cars;
-
 const Car = (props) => {
   return (
     <div className="row">
@@ -59,3 +57,21 @@ const Car = (props) => {
   )
 }
 
+const HOComponent = (InnerComponent) => class extends React.Component {
+  constructor(){
+    super();
+  }
+  shouldComponentUpdate(nextProps, nextState) {
+    let shouldUpdate = this.props.criteria !== nextProps.criteria;
+    return shouldUpdate;
+  }
+  render(){
+    return (
+      <InnerComponent
+        {...this.props}
+      />
+    )
+  }
+}
+
+export const HOCCars = HOComponent(Cars)

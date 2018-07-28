@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import SearchNavBar from './components/SearchNavBar';
-import Cars from './components/Cars';
+import {HOCCars} from './components/Cars';
 
 class App extends Component {
   state={criteria :''}
   handleClick=(value)=>{
-    console.log(value)
     this.setState({criteria:value})
   }
   render() {
@@ -20,7 +19,7 @@ class App extends Component {
         </header>
       </div>
         <SearchNavBar criteria={this.state.criteria} handleSearchClick={this.handleClick}/>
-        <Cars criteria={this.state.criteria} />
+        <HOCCars criteria={this.state.criteria} />
       </div>
     );
   }
