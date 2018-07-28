@@ -5,15 +5,11 @@ import SearchNavBar from './SearchNavBar';
 
 class App extends Component {
   state={criteria :'dhiraj'}
-  handleClick=()=>{
-    this.setState({criteria:'kumar'})
-    alert(this.state.criteria)
-
-
+  handleClick=(value)=>{
+    console.log(value)
+    this.setState({criteria:value})
   }
   render() {
-    alert(this.state.criteria)
-
     return (
       <div>
       <div className="App" >
@@ -22,12 +18,9 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
       </div>
-        <button onClick={this.handleClick} />
-        {this.state.criteria}
         <SearchNavBar criteria={this.state.criteria} handleSearchClick={this.handleClick}/>
       </div>
     );
   }
 }
-
 export default App;
