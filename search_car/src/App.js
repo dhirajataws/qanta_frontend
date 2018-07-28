@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import SearchNavBar from './SearchNavBar';
+import Cars from './components/Cars';
 
 class App extends Component {
-  state={criteria :'dhiraj'}
+  state={criteria :''}
   handleClick=(value)=>{
     console.log(value)
     this.setState({criteria:value})
@@ -19,6 +20,7 @@ class App extends Component {
         </header>
       </div>
         <SearchNavBar criteria={this.state.criteria} handleSearchClick={this.handleClick}/>
+        <Cars/>
       </div>
     );
   }

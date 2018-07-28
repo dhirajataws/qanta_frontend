@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
 
 class SearchNavBar extends Component {
-  text=''
+  text = ''
   handleChangeInput = (e) => {
-  this.text=e.target.value
-    // console.log(e.target.value)
-}
+    this.text = e.target.value
+  }
   handleSubmit = (e) => {
     e.preventDefault()
     this.props.handleSearchClick(this.text)
   }
-    render() {
+
+  render() {
     return (
       <div className="container">
         <nav className="navbar">
@@ -19,11 +19,11 @@ class SearchNavBar extends Component {
             <div className="collapse navbar-collapse" id="navbar-collapse-1">
               <form className="navbar-form navbar-right" role="search" onSubmit={this.handleSubmit}>
                 <div className="form-group">
-                  <input type="text" className="form-control" placeholder="Search" onChange={this.handleChangeInput} />
+                  <input type="text" className="form-control" placeholder="Search" onChange={this.handleChangeInput}/>
                 </div>
                 <button type="submit" className="btn btn-default">Search</button>
               </form>
-          </div>
+            </div>
           </div>
         </nav>
       </div>
