@@ -20,7 +20,7 @@ class App extends Component {
         </header>
       </div>
         <SearchNavBar criteria={this.state.criteria} handleSearchClick={this.handleClick}/>
-        <Cars/>
+        <Cars criteria={this.state.criteria} />
       </div>
     );
   }
