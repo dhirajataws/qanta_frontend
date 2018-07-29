@@ -5,8 +5,12 @@ import SearchNavBar from './components/SearchNavBar';
 import {HOCCars} from './components/Cars';
 
 class App extends Component {
-  state={criteria :''}
-  handleClick=(value)=>{
+  constructor(...args){
+    super(...args)
+    this.state={criteria :''}
+    this.handleClick= this.handleClick.bind(this);
+  }
+  handleClick(value){
     this.setState({criteria:value})
   }
   render() {
